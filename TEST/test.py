@@ -3,12 +3,15 @@ import cv2
 import datetime
 from statistics import mode
 
-k = 1
+k = 3
 
 BoVW_Model = np.load("../result/Key_Points_Description_by_SIFT.npy", allow_pickle=True)
 dataset = np.load("../result/dataset/SIFT_Euclidean.npy", allow_pickle=True).item()
 
 SIFT = cv2.xfeatures2d.SIFT_create()     
+
+def cal_distance(point1, point2):
+    return np.sum(np.abs(point1 - point2))
 
 def SIFT_features(image):                                                                     
     key_point, description = SIFT.detectAndCompute(image,None)                           
@@ -51,9 +54,10 @@ histogram = build_dataset(description)
 buff = []
 for d_key, d_histograms in dataset.items():                        
     for d_histogram in d_histograms:            
-        buff.append([np.sum(np.abs(histogram - d_histogram)), d_key])
+        buff.append([cal_distance(histogram, d_histogram), d_key])
         
 list.sort(buff)        
 k_key = mode(np.asarray(buff[:k])[:, 1])
 end_time = datetime.datetime.now()
+print(k_key)
 print(end_time - start_time)
