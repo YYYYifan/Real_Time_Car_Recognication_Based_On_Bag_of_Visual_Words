@@ -34,3 +34,4 @@ for feature_type in mySetting["str_feature_type"]:
                    ['Accuracy', 'Precision', 'Recall', 'F1-Score'])
         
         plt.savefig("./images/Model_Evaluation/{}_{}.png".format(feature_type, distance_type), dpi = 600)
+

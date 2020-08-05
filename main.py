@@ -35,7 +35,6 @@ feature_type = 2
 distance_type = 1
 
 
-
 for images in ["dataset", "sample"]:
     for feature_type in  mySetting["feature_type"]:
         for distance_type in mySetting["distance_type"]:
@@ -46,3 +45,4 @@ for images in ["dataset", "sample"]:
 # myBoVW = BoVW.BoVW(images="dataset", n_clusters=150, feature_type=2, distance_type=1)
 end_datetime = datetime.datetime.now()
 log_func("Finish, time cose: {}".format(end_datetime - start_datetime))            
+
