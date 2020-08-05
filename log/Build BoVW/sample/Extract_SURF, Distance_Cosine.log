@@ -1,0 +1,12 @@
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:09:02.328836
+		KEY: Negetive finish, Time cose:0:07:41.525006
+
+		Time Cost: 0:16:43.853842
+
+BoVW dataset is ready, time cose: 0:16:43.969533

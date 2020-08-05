@@ -1,0 +1,25 @@
+In packages.BoVW
+	Features doesn`t exist.
+
+	In SIFT_features()
+		SIFT feature extraction start
+			KEY: Positive finished
+			KEY: Negetive finished
+
+		Time Cost: 0:01:32.606750
+
+	BoVW model doesn`t exist
+
+	In K-Measn()
+
+		Time Cost: 0:47:46.113414
+
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:14:33.061125
+		KEY: Negetive finish, Time cose:0:14:22.431515
+
+		Time Cost: 0:28:55.492640
+
+BoVW dataset is ready, time cose: 1:18:16.978385

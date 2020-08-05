@@ -1,0 +1,20 @@
+In packages.BoVW
+	Features doesn`t exist.
+
+	In SURF_features()
+		SURF feature extraction start
+			KEY: Positive finished
+			KEY: Negetive finished
+
+		Time Cost: 0:00:10.400197
+
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:02:53.178598
+		KEY: Negetive finish, Time cose:0:02:27.832836
+
+		Time Cost: 0:05:21.012430
+
+BoVW dataset is ready, time cose: 0:05:31.800674

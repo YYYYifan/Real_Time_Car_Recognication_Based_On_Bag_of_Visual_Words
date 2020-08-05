@@ -1,0 +1,212 @@
+Main func start, Now: 2020-08-05 00:18:05.478900
+
+----- images: dataset, feature_type: 1, distance_type: 1, NOW: 2020-08-05 00:18:05.479898 -----
+----- images: dataset, feature_type: 1, distance_type: 2, NOW: 2020-08-05 01:36:22.771473 -----
+----- images: dataset, feature_type: 1, distance_type: 3, NOW: 2020-08-05 02:15:30.675126 -----
+----- images: dataset, feature_type: 1, distance_type: 4, NOW: 2020-08-05 02:45:35.748025 -----
+----- images: dataset, feature_type: 2, distance_type: 1, NOW: 2020-08-05 03:59:55.778660 -----
+----- images: dataset, feature_type: 2, distance_type: 2, NOW: 2020-08-05 07:03:54.698533 -----
+----- images: dataset, feature_type: 2, distance_type: 3, NOW: 2020-08-05 08:06:46.498358 -----
+----- images: dataset, feature_type: 2, distance_type: 4, NOW: 2020-08-05 08:55:10.115334 -----
+----- images: sample, feature_type: 1, distance_type: 1, NOW: 2020-08-05 11:20:21.680823 -----
+----- images: sample, feature_type: 1, distance_type: 2, NOW: 2020-08-05 11:23:31.483789 -----
+----- images: sample, feature_type: 1, distance_type: 3, NOW: 2020-08-05 11:27:29.417737 -----
+----- images: sample, feature_type: 1, distance_type: 4, NOW: 2020-08-05 11:30:36.940528 -----
+----- images: sample, feature_type: 2, distance_type: 1, NOW: 2020-08-05 11:39:23.308527 -----
+----- images: sample, feature_type: 2, distance_type: 2, NOW: 2020-08-05 11:44:55.181008 -----
+----- images: sample, feature_type: 2, distance_type: 3, NOW: 2020-08-05 11:52:12.183298 -----
+----- images: sample, feature_type: 2, distance_type: 4, NOW: 2020-08-05 11:57:47.855495 -----
+Finish, time cose: 11:56:26.386022
+ build_dataset()
+		KEY: Positive finish, Time cose:0:37:28.741665
+		KEY: Negetive finish, Time cose:0:36:49.191525
+
+		Time Cost: 1:14:17.933190
+
+BoVW dataset is ready, time cose: 1:14:19.528013
+----- images: dataset, feature_type: 2, distance_type: 1, NOW: 2020-08-05 03:59:55.778660 -----
+In packages.BoVW
+	Features doesn`t exist.
+
+	In SURF_features()
+		SURF feature extraction start
+			KEY: Positive finished
+			KEY: Negetive finished
+
+		Time Cost: 0:01:31.743747
+
+	BoVW model doesn`t exist
+
+	In K-Measn()
+
+		Time Cost: 2:16:12.697475
+
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:23:36.633214
+		KEY: Negetive finish, Time cose:0:22:33.558836
+
+		Time Cost: 0:46:10.192050
+
+BoVW dataset is ready, time cose: 3:03:58.408238
+----- images: dataset, feature_type: 2, distance_type: 2, NOW: 2020-08-05 07:03:54.698533 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:32:14.063798
+		KEY: Negetive finish, Time cose:0:30:35.816138
+
+		Time Cost: 1:02:49.880933
+
+BoVW dataset is ready, time cose: 1:02:50.963039
+----- images: dataset, feature_type: 2, distance_type: 3, NOW: 2020-08-05 08:06:46.498358 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:24:48.419684
+		KEY: Negetive finish, Time cose:0:23:33.513845
+
+		Time Cost: 0:48:21.933529
+
+BoVW dataset is ready, time cose: 0:48:23.029539
+----- images: dataset, feature_type: 2, distance_type: 4, NOW: 2020-08-05 08:55:10.115334 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:1:14:29.688628
+		KEY: Negetive finish, Time cose:1:10:40.233257
+
+		Time Cost: 2:25:09.921885
+
+BoVW dataset is ready, time cose: 2:25:11.019892
+----- images: sample, feature_type: 1, distance_type: 1, NOW: 2020-08-05 11:20:21.680823 -----
+In packages.BoVW
+	Features doesn`t exist.
+
+	In SIFT_features()
+		SIFT feature extraction start
+			KEY: Positive finished
+			KEY: Negetive finished
+
+		Time Cost: 0:00:10.326422
+
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:01:29.608453
+		KEY: Negetive finish, Time cose:0:01:28.984123
+
+		Time Cost: 0:02:58.592576
+
+BoVW dataset is ready, time cose: 0:03:09.559621
+----- images: sample, feature_type: 1, distance_type: 2, NOW: 2020-08-05 11:23:31.483789 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:01:58.454369
+		KEY: Negetive finish, Time cose:0:01:59.253207
+
+		Time Cost: 0:03:57.707576
+
+BoVW dataset is ready, time cose: 0:03:57.856180
+----- images: sample, feature_type: 1, distance_type: 3, NOW: 2020-08-05 11:27:29.417737 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:01:33.506131
+		KEY: Negetive finish, Time cose:0:01:33.821182
+
+		Time Cost: 0:03:07.327313
+
+BoVW dataset is ready, time cose: 0:03:07.465942
+----- images: sample, feature_type: 1, distance_type: 4, NOW: 2020-08-05 11:30:36.940528 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:04:22.254408
+		KEY: Negetive finish, Time cose:0:04:23.936067
+
+		Time Cost: 0:08:46.190475
+
+BoVW dataset is ready, time cose: 0:08:46.317127
+----- images: sample, feature_type: 2, distance_type: 1, NOW: 2020-08-05 11:39:23.308527 -----
+In packages.BoVW
+	Features doesn`t exist.
+
+	In SURF_features()
+		SURF feature extraction start
+			KEY: Positive finished
+			KEY: Negetive finished
+
+		Time Cost: 0:00:10.400197
+
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:02:53.178598
+		KEY: Negetive finish, Time cose:0:02:27.832836
+
+		Time Cost: 0:05:21.012430
+
+BoVW dataset is ready, time cose: 0:05:31.800674
+----- images: sample, feature_type: 2, distance_type: 2, NOW: 2020-08-05 11:44:55.181008 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:03:55.362844
+		KEY: Negetive finish, Time cose:0:03:21.418037
+
+		Time Cost: 0:07:16.780881
+
+BoVW dataset is ready, time cose: 0:07:16.906545
+----- images: sample, feature_type: 2, distance_type: 3, NOW: 2020-08-05 11:52:12.183298 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:02:59.988845
+		KEY: Negetive finish, Time cose:0:02:35.493859
+
+		Time Cost: 0:05:35.482704
+
+BoVW dataset is ready, time cose: 0:05:35.617345
+----- images: sample, feature_type: 2, distance_type: 4, NOW: 2020-08-05 11:57:47.855495 -----
+In packages.BoVW
+	Found the features.
+	Found the BoVW model
+	BoVW dataset doesn`t exist
+
+	In build_dataset()
+		KEY: Positive finish, Time cose:0:09:02.328836
+		KEY: Negetive finish, Time cose:0:07:41.525006
+
+		Time Cost: 0:16:43.853842
+
+BoVW dataset is ready, time cose: 0:16:43.969533
+Finish, time cose: 11:56:26.386022
