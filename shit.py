@@ -1,46 +1,70 @@
-# -*- coding: utf-8 -*-
-
-import json
+from statistics import mode
+from PIL import ImageGrab
 import numpy as np
+import PIL
+import cv2
+import datetime
 
-with open("./setting.json") as file_obj:
-    mySetting = json.load(file_obj)
+BoVW_Model = np.load("./result/Key_Points_Description_by_SIFT.npy", allow_pickle=True)
+dataset = np.load("./result/dataset/SIFT_Euclidean.npy", allow_pickle=True).item() 
+SIFT = cv2.xfeatures2d.SIFT_create()     
+BOX=(0,25,880,640)
+ 
+#左上角坐标和右下角坐标
+#调整box的值即可改变截取区域
 
-# tt = np.load("./data/dataset/Extract_Feature_by_SIFT.npy", allow_pickle=True).item()
+def cal_distance(point1, point2):
+    return np.sum(np.abs(point1 - point2))
 
-tt = mySetting["distance_type"]
-
-#ttt = np.load("./data/dataset/De_by_SIFT.npy", allow_pickle=True) # Key_Points
-
-# key_points = np.load("./data/dataset/Key_Points_by_SIFT.npy", allow_pickle=True).item()
-'''
-dataset = np.load("./result/dataset/SIFT_Manhattan.npy", allow_pickle=True).item()
-sample = np.load("./result/sample/SIFT_Manhattan.npy", allow_pickle=True).item()
+def SIFT_features(image):                                                                     
+    key_point, description = SIFT.detectAndCompute(image,None)                           
+    return key_point, description
 
 
-feature_type = 1
-distance_type = 1
-
-dict_feature_name = {
-    1: "SIFT",
-    2: "SURF"
-    }[feature_type]
+def find_index(each_feature, BoVW_Model):
+    count = 0
+    ind = 0
+    for i in range(len(BoVW_Model)):
+        if(i == 0):
+           count = np.sqrt(np.sum(np.square(each_feature - BoVW_Model[i]))) 
+        else:
+            dist = np.sqrt(np.sum(np.square(each_feature - BoVW_Model[i])))
+            if(dist < count):
+                ind = i
+                count = dist
+    return ind 
         
-dict_distance_name = {
-    1: "Manhattan",
-    2: "Euclidean",
-    3: "Chebyshev",
-    4: "Cosine"
-    }[distance_type]  
+def build_dataset(description):                    
+    histogram = np.zeros(len(BoVW_Model))
+    for each_feature in description:
+        ind = find_index(each_feature, BoVW_Model)
+        histogram[ind] += 1
+    
+    return histogram
 
-obj_name = "{}_{}.npy".format(dict_feature_name, dict_distance_name)
+ 
+while True:    
+    start = datetime.datetime.now()
+    screen=np.array(ImageGrab.grab(bbox=BOX).convert("L"))
+    cv2.imshow("window",screen)
+    
+    key_points, description = SIFT_features(screen)
 
-
-dataset = np.load("./result/dataset/{}_{}.npy".format(dict_feature_name, dict_distance_name), allow_pickle=True).item()
-sample = np.load("./result/sample/{}_{}.npy".format(dict_feature_name, dict_distance_name), allow_pickle=True).item()
-'''
-
-for feature_type in mySetting["str_feature_type"]:
-    for distance_type in mySetting["str_distance_type"]:  
-        result = np.load("./result/Model Evaluation/{}_{}.npy".format(feature_type, distance_type), allow_pickle=True)
-        print("./result/Model Evaluation/{}_{}.npy, len = {}\n".format(feature_type, distance_type, len(result[:, 0])))
+    histogram = build_dataset(description)
+    
+    buff = []
+    for d_key, d_histograms in dataset.items():                        
+        for d_histogram in d_histograms:            
+            buff.append([cal_distance(histogram, d_histogram), d_key])
+            
+    list.sort(buff)        
+    k_key = mode(np.asarray(buff[:3])[:, 1])
+    # end_time = datetime.datetime.now()
+    print("{}, {}, {}".format(datetime.datetime.now(), k_key, datetime.datetime.now()-start))
+    
+    
+    
+    
+    if cv2.waitKey(25) & 0xFF == ord("q"):
+        cv2.destroyAllWindows()
+        break
